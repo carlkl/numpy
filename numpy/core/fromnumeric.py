@@ -513,6 +513,12 @@ def transpose(a, axes=None):
     See Also
     --------
     rollaxis
+    argsort
+
+    Notes
+    -----
+    Use `transpose(a, argsort(axes))` to invert the transposition of tensors
+    when using the `axes` keyword argument.
 
     Examples
     --------
@@ -1082,6 +1088,9 @@ def resize(a, new_shape):
     Examples
     --------
     >>> a=np.array([[0,1],[2,3]])
+    >>> np.resize(a,(2,3))
+    array([[0, 1, 2],
+           [3, 0, 1]])
     >>> np.resize(a,(1,4))
     array([[0, 1, 2, 3]])
     >>> np.resize(a,(2,4))
